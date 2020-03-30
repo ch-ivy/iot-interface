@@ -1,0 +1,158 @@
+<svg
+  id="Layer_1"
+  data-name="Layer 1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 2048 1412"
+>
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #680925;
+      }
+      .cls-1,
+      .cls-2,
+      .cls-4,
+      .cls-5,
+      .cls-6,
+      .cls-7 {
+        opacity: 0.4;
+      }
+      .cls-2 {
+        fill: #82c341;
+      }
+      .cls-3 {
+        font-size: 60px;
+        fill: #fff;
+        font-family: Avenir-Heavy, Avenir;
+        font-weight: 800;
+      }
+      .cls-4 {
+        fill: #93a9d7;
+      }
+      .cls-5 {
+        fill: #faef5e;
+      }
+      .cls-6 {
+        fill: #9f4e23;
+      }
+      .cls-7 {
+        fill: #c07fb7;
+      }
+    </style>
+  </defs>
+  <title>office2</title>
+  <image width="2048" height="1412" xlink:href="assets/img/office.png" />
+  <polyline
+    id="room1"
+    class="cls-1"
+    (click)="open(content, 'London')"
+    points="105.25 1141.35 105.25 901.35 552.4 638.62 693.88 719.46 911.14 1015.04
+  911.14 1083.25 463.99 1338.4"
+  />
+  <polygon
+    (click)="open(content, 'Istanbul')"
+    id="room2"
+    class="cls-2"
+    points="317.46 552.72 317.46 322.83 777.25 62.62 1161.25 287.46 519.16 658.15 317.46 552.72"
+  />
+  <text
+    id="text1"
+    class="cls-3"
+    transform="translate(554.74 1010.1) scale(0.58)"
+  >
+    text
+  </text>
+  <text
+    id="text2"
+    class="cls-3"
+    transform="translate(691.16 320.42) scale(0.58)"
+  >
+    text
+  </text>
+  <polyline
+    id="room3"
+    class="cls-4"
+    points="547.35 638.62 1297.67 216.72 1641.24 413.77 906.09 848.3 906.09 1004.93 697.18 730.83"
+  />
+  <polygon
+    id="room4"
+    class="cls-5"
+    points="1310.3 204.09 1537.67 77.77 1888.82 282.4 1888.82 522.4 1775.14 577.98 1646.3 507.25 1662.79 417.47 1310.3 204.09"
+  />
+  <polyline
+    id="room5"
+    class="cls-6"
+    points="1247.14 658.15 1575.56 471.88 1939.35 676.51 1939.35 906.4 1691.77 1052.93 1504.83 936.72 1375.98 744.72"
+  />
+  <polygon
+    id="room6"
+    class="cls-7"
+    points="926.3 855.88 1229.46 676.51 1363.35 744.72 1599.56 1075.67 1599.56 1121.14 1285.04 1295.46 911.14 1083.25 926.3 855.88"
+  />
+  <text
+    id="text3"
+    class="cls-3"
+    transform="translate(1613.26 285.05) scale(0.58)"
+  >
+    text
+  </text>
+  <text
+    id="text4"
+    class="cls-3"
+    transform="translate(1263.37 991.15) scale(0.58)"
+  >
+    text
+  </text>
+  <text
+    id="text5"
+    class="cls-3"
+    transform="translate(1566.52 787.78) scale(0.58)"
+  >
+    text
+  </text>
+  <text
+    id="text6"
+    class="cls-3"
+    transform="translate(1076.42 575.57) scale(0.58)"
+  >
+    text
+  </text>
+</svg>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="chart-wrapper" width="50%">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
