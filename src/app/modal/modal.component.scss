@@ -1,1 +1,7 @@
 @import "../iamge/iamge.component.scss";
+
+@media (max-width: 800px) {
+  .chart-wrapper {
+    height: 40vh;
+  }
+}

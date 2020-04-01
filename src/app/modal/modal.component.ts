@@ -36,6 +36,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   barChartData: ChartDataSets[] = [];
   Options: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
   };
 
 
