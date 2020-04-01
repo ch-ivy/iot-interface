@@ -36,18 +36,18 @@
     <polyline
       id="room1"
       class="cls-1"
-      (click)="open('London')"
+      (click)="open('London', false, true, false, false)"
       points="105.25 1141.35 105.25 901.35 552.4 638.62 693.88 719.46 911.14 1015.04
   911.14 1083.25 463.99 1338.4"
     />
     <polygon
-      (click)="open('Istanbul')"
+      (click)="open('Istanbul', true, true, true, false)"
       id="room2"
       class="cls-2"
       points="317.46 552.72 317.46 322.83 777.25 62.62 1161.25 287.46 519.16 658.15 317.46 552.72"
     />
     <text
-      (click)="open('London')"
+      (click)="open('London', false, true, false, false)"
       id="text1"
       class="cls-3"
       transform="translate(304.74 1010.1) scale(0.58)"
@@ -63,7 +63,7 @@
       </g>
     </svg>
     <text
-      (click)="open('London')"
+      (click)="open('London', false, true, false, false)"
       id="text1"
       class="cls-8"
       transform="translate(490.74 930) scale(0.58)"
@@ -71,7 +71,7 @@
       {{ temp1 | number: "2.0-0" }} &deg;C
     </text>
     <text
-      (click)="open('Istanbul')"
+      (click)="open('Istanbul', true, true, true, false)"
       id="text2"
       class="cls-3"
       transform="translate(620.16 320.42) scale(0.58)"
@@ -86,7 +86,7 @@
       </g>
     </svg>
     <text
-      (click)="open('Istanbul')"
+      (click)="open('Istanbul', true, true, true, false)"
       id="text1"
       class="cls-8"
       transform="translate(720.74 430) scale(0.58)"
@@ -94,31 +94,31 @@
       {{ temp3 | number: "2.0-0" }} &deg;C
     </text>
     <polyline
-      (click)="open('Lagos')"
+      (click)="open('Lagos', true, true, true, true)"
       id="room3"
       class="cls-4"
       points="547.35 638.62 1297.67 216.72 1641.24 413.77 906.09 848.3 906.09 1004.93 697.18 730.83"
     />
     <polygon
-      (click)="open('Rome')"
+      (click)="open('Rome', true, false, false, true)"
       id="room4"
       class="cls-5"
       points="1310.3 204.09 1537.67 77.77 1888.82 282.4 1888.82 522.4 1775.14 577.98 1646.3 507.25 1662.79 417.47 1310.3 204.09"
     />
     <polyline
-      (click)="open('Los Angeles')"
+      (click)="open('Los Angeles', true, true, true, false)"
       id="room5"
       class="cls-6"
       points="1247.14 658.15 1575.56 471.88 1939.35 676.51 1939.35 906.4 1691.77 1052.93 1504.83 936.72 1375.98 744.72"
     />
     <polygon
-      (click)="open('Barcelona')"
+      (click)="open('Barcelona', true, true, false, false)"
       id="room6"
       class="cls-7"
       points="926.3 855.88 1229.46 676.51 1363.35 744.72 1599.56 1075.67 1599.56 1121.14 1285.04 1295.46 911.14 1083.25 926.3 855.88"
     />
     <text
-      (click)="open('Rome')"
+      (click)="open('Rome', true, false, false, true)"
       id="text3"
       class="cls-3"
       transform="translate(1500.26 285.05) scale(0.58)"
@@ -133,7 +133,7 @@
       </g>
     </svg>
     <text
-      (click)="open('Rome')"
+      (click)="open('Rome', true, false, false, true)"
       id="text1"
       class="cls-8"
       transform="translate(1650.74 390) scale(0.58)"
@@ -141,7 +141,7 @@
       {{ temp4 | number: "2.0-0" }} &deg;C
     </text>
     <text
-      (click)="open('Barcelona')"
+      (click)="open('Barcelona', true, true, false, false)"
       id="text4"
       class="cls-3"
       transform="translate(1100.37 991.15) scale(0.58)"
@@ -156,7 +156,7 @@
       </g>
     </svg>
     <text
-      (click)="open('Barcelona')"
+      (click)="open('Barcelona', true, true, false, false)"
       id="text1"
       class="cls-8"
       transform="translate(1220.74 1110) scale(0.58)"
@@ -164,7 +164,7 @@
       {{ temp5 | number: "2.0-0" }} &deg;C
     </text>
     <text
-      (click)="open('Los Angeles')"
+      (click)="open('Los Angeles', true, true, true, false)"
       id="text5"
       class="cls-3"
       transform="translate(1566.52 787.78) scale(0.58)"
@@ -179,7 +179,7 @@
       </g>
     </svg>
     <text
-      (click)="open('Los Angeles')"
+      (click)="open('Los Angeles', true, true, true, false)"
       id="text1"
       class="cls-8"
       transform="translate(1620.74 910) scale(0.58)"
@@ -187,7 +187,7 @@
       {{ temp6 | number: "2.0-0" }} &deg;C
     </text>
     <text
-      (click)="open('Lagos')"
+      (click)="open('Lagos', true, true, true, true)"
       id="text6"
       class="cls-3"
       transform="translate(976.42 575.57) scale(0.58)"
@@ -202,7 +202,7 @@
       </g>
     </svg>
     <text
-      (click)="open('Lagos')"
+      (click)="open('Lagos', true, true, true, true)"
       id="text1"
       class="cls-8"
       transform="translate(920.74 680) scale(0.58)"

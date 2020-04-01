@@ -32,6 +32,11 @@ export class ModalComponent implements OnInit, OnDestroy {
   hue: number
   alpha: number
 
+  light: boolean;
+  fridge: boolean;
+  internet: boolean;
+  ac: boolean;
+
   ChartLabels: Label[];
   barChartData: ChartDataSets[] = [];
   Options: ChartOptions = {
@@ -74,6 +79,12 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
   async info(data) {
+
+    this.light = this.api.light;
+    this.ac = this.api.ac;
+    this.fridge = this.api.fridge;
+    this.internet = this.api.internet;
+
     this.city = data;
     this.currentTemp = data['list'][0].main.temp - 273.5;
     this.hue = this.currentTemp < 25 ? 200 : 5;

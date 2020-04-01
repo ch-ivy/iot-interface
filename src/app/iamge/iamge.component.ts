@@ -38,8 +38,12 @@ export class IamgeComponent implements OnInit, OnDestroy {
   }
 
 
-  open(s) {
-    this.router.navigate([s], { relativeTo: this.route })
+  open(city, light, router, ac, fridge) {
+    this.router.navigate([city], { relativeTo: this.route })
+    this.api.light = light;
+    this.api.fridge = fridge;
+    this.api.internet = router;
+    this.api.ac = ac;
   }
 
   ngOnDestroy(): void {

@@ -94,7 +94,7 @@
             <hr />
             <div class="row my-3" style="padding: 10px;">
               <div class="appliance col-md-6">
-                <input type="checkbox" name="a" id="a" />
+                <input type="checkbox" name="a" id="a" [checked]="light" />
                 <label for="a">
                   <i class="l"></i>
                   <strong>Light</strong>
@@ -104,7 +104,7 @@
               </div>
 
               <div class="appliance col-md-6">
-                <input type="checkbox" name="a" id="b" />
+                <input type="checkbox" name="a" id="b" [checked]="internet" />
                 <label for="b">
                   <i class="r"></i>
                   <strong>Router</strong>
@@ -114,7 +114,7 @@
               </div>
 
               <div class="appliance col-md-6">
-                <input type="checkbox" name="a" id="c" />
+                <input type="checkbox" name="a" id="c" [checked]="ac" />
                 <label for="c">
                   <i class="a"></i>
                   <strong>A/c</strong>
@@ -124,7 +124,7 @@
               </div>
 
               <div class="appliance col-md-6">
-                <input type="checkbox" name="a" id="d" />
+                <input type="checkbox" name="a" id="d" [checked]="fridge" />
                 <label for="d">
                   <i class="f"></i>
                   <strong>Fridge</strong>
