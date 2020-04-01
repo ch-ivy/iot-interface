@@ -39,7 +39,6 @@ export class IamgeComponent implements OnInit, OnDestroy {
 
 
   open(s) {
-    console.log(s);
     this.router.navigate([s], { relativeTo: this.route })
   }
 
