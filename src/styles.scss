@@ -58,10 +58,5 @@ body {
   @include shadow(darken($background, 25%), 5, white);
   span {
     color: $secondary;
-    @include shadow(
-      darken(desaturate($secondary, 80%), 20%),
-      5,
-      lighten($secondary, 10%)
-    );
   }
 }

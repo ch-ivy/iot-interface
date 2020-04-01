@@ -83,7 +83,7 @@ $switchOff: #ff574e;
 
 .dial {
   filter: drop-shadow(
-    -20px 30px 40px hsla(var(--temp-hue), 85%, 80%, var(--temp-alpha))
+    1px 3px 3px hsla(var(--temp-hue), 87%, 38%, var(--temp-alpha))
   );
   position: relative;
   z-index: 2;
