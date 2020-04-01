@@ -6,11 +6,12 @@
 }
 $background: #e0e0e0;
 $secondary: #ffae19;
+
 @mixin shadow($color, $steps, $glow) {
   $all: ();
   $all: append($all, -1px 1px 0 rgba($color, 0.1), comma);
-  $all: append($all, 1px -1px 0 rgba($glow, 0.1), comma);
-  $all: append($all, 1px -1px 25px $glow, comma);
+  $all: append($all, 1px 0px 0 rgba($glow, 0.1), comma);
+  $all: append($all, 1px -1px 5px $glow, comma);
   @for $i from 1 through $steps {
     $all: append(
       $all,
@@ -54,12 +55,12 @@ body {
   cursor: pointer;
   -webkit-transform: translate3d(0, 50%, 0) rotate(0deg);
   color: $background;
-  @include shadow(darken($background, 25%), 25, white);
+  @include shadow(darken($background, 25%), 5, white);
   span {
     color: $secondary;
     @include shadow(
       darken(desaturate($secondary, 80%), 20%),
-      25,
+      5,
       lighten($secondary, 10%)
     );
   }
