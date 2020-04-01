@@ -8,12 +8,15 @@ import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { ModalComponent } from './modal/modal.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    IamgeComponent
+    IamgeComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { MatCardModule } from '@angular/material/card';
     ChartsModule,
     NgbModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

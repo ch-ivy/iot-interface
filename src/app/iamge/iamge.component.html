@@ -1,305 +1,198 @@
-<svg
-  id="Layer_1"
-  data-name="Layer 1"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 2048 1412"
->
-  <title>office2</title>
-  <image width="2048" height="1412" xlink:href="assets/img/office.png" />
-  <polyline
-    id="room1"
-    class="cls-1"
-    (click)="open(content, 'London')"
-    points="105.25 1141.35 105.25 901.35 552.4 638.62 693.88 719.46 911.14 1015.04
-  911.14 1083.25 463.99 1338.4"
-  />
-  <polygon
-    (click)="open(content, 'Istanbul')"
-    id="room2"
-    class="cls-2"
-    points="317.46 552.72 317.46 322.83 777.25 62.62 1161.25 287.46 519.16 658.15 317.46 552.72"
-  />
-  <text
-    (click)="open(content, 'London')"
-    id="text1"
-    class="cls-3"
-    transform="translate(304.74 1010.1) scale(0.58)"
-  >
-    Manager's Office
-  </text>
-  <text
-    (click)="open(content, 'Istanbul')"
-    id="text2"
-    class="cls-3"
-    transform="translate(620.16 320.42) scale(0.58)"
-  >
-    Reception
-  </text>
-  <polyline
-    (click)="open(content, 'Room3')"
-    id="room3"
-    class="cls-4"
-    points="547.35 638.62 1297.67 216.72 1641.24 413.77 906.09 848.3 906.09 1004.93 697.18 730.83"
-  />
-  <polygon
-    (click)="open(content, 'Room4')"
-    id="room4"
-    class="cls-5"
-    points="1310.3 204.09 1537.67 77.77 1888.82 282.4 1888.82 522.4 1775.14 577.98 1646.3 507.25 1662.79 417.47 1310.3 204.09"
-  />
-  <polyline
-    (click)="open(content, 'Room5')"
-    id="room5"
-    class="cls-6"
-    points="1247.14 658.15 1575.56 471.88 1939.35 676.51 1939.35 906.4 1691.77 1052.93 1504.83 936.72 1375.98 744.72"
-  />
-  <polygon
-    (click)="open(content, 'Room6')"
-    id="room6"
-    class="cls-7"
-    points="926.3 855.88 1229.46 676.51 1363.35 744.72 1599.56 1075.67 1599.56 1121.14 1285.04 1295.46 911.14 1083.25 926.3 855.88"
-  />
-  <text
-    (click)="open(content, 'Room4')"
-    id="text3"
-    class="cls-3"
-    transform="translate(1500.26 285.05) scale(0.58)"
-  >
-    Cafeteria
-  </text>
-  <text
-    (click)="open(content, 'Room6')"
-    id="text4"
-    class="cls-3"
-    transform="translate(1100.37 991.15) scale(0.58)"
-  >
-    Meeting Room
-  </text>
-  <text
-    (click)="open(content, 'Room5')"
-    id="text5"
-    class="cls-3"
-    transform="translate(1566.52 787.78) scale(0.58)"
-  >
-    HR's Office
-  </text>
-  <text
-    (click)="open(content, 'Room3')"
-    id="text6"
-    class="cls-3"
-    transform="translate(976.42 575.57) scale(0.58)"
-  >
-    Tech Team
-  </text>
-</svg>
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">{{ room }}</h4>
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
+<div class="container">
+  <h1 class="text-center my-5 font display-3">IOT <span>Interface</span></h1>
+  <p class="font text-center my-5">
+    <span
+      style="color: black;
+    font-size: 2rem;"
     >
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="dashboard">
-      <div class="row">
-        <div class="col-lg-4" style="background: rgba(238, 238, 238, 0.377);">
-          <div class="container">
-            <div class="app m-auto">
-              <div class="dial-container">
-                <svg class="dial" viewBox="0 0 400 400">
-                  <defs>
-                    <linearGradient
-                      id="linear"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stop-color="#e5e5e5" />
-                      <stop
-                        offset="100%"
-                        stop-color="#e5e5e5"
-                        stop-opacity="0"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <line
-                    class="dial__tick"
-                    x1="50%"
-                    x2="50%"
-                    y1="17%"
-                    y2="83%"
-                  />
-                  <line
-                    class="dial__tick"
-                    x1="17%"
-                    x2="83%"
-                    y1="50%"
-                    y2="50%"
-                  />
-                  <circle
-                    class="dial__center"
-                    id="dial-center"
-                    cx="50%"
-                    cy="50%"
-                    r="120"
-                  />
-                  <text
-                    class="dial__temp"
-                    x="50%"
-                    y="30%"
-                    text-anchor="middle"
-                    style="font-size: 28px;
-                    font-weight: 400;"
-                  >
-                    <tspan id="temp-display">
-                      Temp
-                    </tspan>
-                  </text>
-                  <text class="dial__temp" x="50%" y="50%" text-anchor="middle">
-                    <tspan id="temp-display">
-                      {{ currentTemp | number: "2.0-0" }}
-                    </tspan>
-                    <tspan class="dial__temp-units">&deg;C</tspan>
-                  </text>
-                  <g class="dial__control">
-                    <circle
-                      class="dial__track"
-                      cx="50%"
-                      cy="50%"
-                      r="152"
-                      stroke="url(#linear)"
-                    />
-                    <circle
-                      id="temp-handle"
-                      class="dial__dot"
-                      cx="48"
-                      cy="50%"
-                      r="10"
-                      stroke="transparent"
-                      stroke-width="20"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </div>
-            <div class="apps">
-              <h3
-                class="mx-2 my-1"
-                style="font-weight: 400; font-size: 18px; font-family: 'Quicksand', sans-serif;"
-              >
-                {{ date | date: "EEEE, h:mm a" }}
-              </h3>
+      Click on a room of office map to see details</span
+    >
+  </p>
+  <svg
+    class="my-5"
+    id="Layer_1"
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 2048 1412"
+  >
+    <title>office2</title>
+    <image width="2048" height="1412" xlink:href="assets/img/office.png" />
+    <polyline
+      id="room1"
+      class="cls-1"
+      (click)="open('London')"
+      points="105.25 1141.35 105.25 901.35 552.4 638.62 693.88 719.46 911.14 1015.04
+  911.14 1083.25 463.99 1338.4"
+    />
+    <polygon
+      (click)="open('Istanbul')"
+      id="room2"
+      class="cls-2"
+      points="317.46 552.72 317.46 322.83 777.25 62.62 1161.25 287.46 519.16 658.15 317.46 552.72"
+    />
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-3"
+      transform="translate(304.74 1010.1) scale(0.58)"
+    >
+      Manager's Office
+    </text>
 
-              <div class="appliances">
-                <div class="appliance">
-                  <input type="checkbox" name="a" id="a" />
-                  <label for="a">
-                    <i class="l"></i>
-                    <strong>Light</strong>
-                    <span data-o="opened" data-c="closed"></span>
-                    <small></small>
-                  </label>
-                </div>
-
-                <div class="appliance">
-                  <input type="checkbox" name="a" id="b" />
-                  <label for="b">
-                    <i class="r"></i>
-                    <strong>Router</strong>
-                    <span data-o="opened" data-c="closed"></span>
-                    <small></small>
-                  </label>
-                </div>
-
-                <div class="appliance">
-                  <input type="checkbox" name="a" id="c" />
-                  <label for="c">
-                    <i class="a"></i>
-                    <strong>A/c</strong>
-                    <span data-o="opened" data-c="closed"></span>
-                    <small></small>
-                  </label>
-                </div>
-
-                <div class="appliance">
-                  <input type="checkbox" name="a" id="d" />
-                  <label for="d">
-                    <i class="f"></i>
-                    <strong>Fridge</strong>
-                    <span data-o="opened" data-c="closed"></span>
-                    <small></small>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="col-lg-8"
-          style="background-image: linear-gradient(to right, rgba(58, 43, 15, 0.103) 0%, #ffae195d 100%);"
-        >
-          <h2 class="my-5 mx-4 title">Forcast Details</h2>
-          <div class="row forecast">
-            <div class="appliance col-lg-3">
-              <label>
-                <strong>Weather</strong>
-              </label>
-            </div>
-            <div class="appliance col-lg-3">
-              <label>
-                <h1>{{ Humidity }}%</h1>
-                <strong>Humidity</strong>
-              </label>
-            </div>
-            <div class="appliance col-lg-3">
-              <label>
-                <h1>{{ Wind }}Km</h1>
-                <strong>Wind</strong>
-              </label>
-            </div>
-            <div class="appliance col-lg-3">
-              <label>
-                <h1>{{ pressure }}mb</h1>
-                <strong>Pressure</strong>
-              </label>
-            </div>
-          </div>
-          <mat-card class="shadow-sm my-5 mx-3">
-            <div class="chart-wrapper">
-              <canvas
-                baseChart
-                width="400"
-                height="200"
-                [datasets]="lineChartData"
-                [labels]="ChartLabels"
-                [options]="Options"
-                [colors]="lineChartColors"
-                [legend]="lineChartLegend"
-                [chartType]="lineChartType"
-                [plugins]="lineChartPlugins"
-              >
-              </canvas>
-            </div>
-          </mat-card>
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-outline-dark"
-        (click)="modal.close('Save click')"
-      >
-        Save
-      </button>
-    </div>
-  </div>
-</ng-template>
+    <svg y="850px" x="400.74px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(490.74 930) scale(0.58)"
+    >
+      {{ temp1 | number: "2.0-0" }} &deg;C
+    </text>
+    <text
+      (click)="open('Istanbul')"
+      id="text2"
+      class="cls-3"
+      transform="translate(620.16 320.42) scale(0.58)"
+    >
+      Reception
+    </text>
+    <svg y="350px" x="620.74px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(720.74 430) scale(0.58)"
+    >
+      {{ temp3 | number: "2.0-0" }} &deg;C
+    </text>
+    <polyline
+      (click)="open('Lagos')"
+      id="room3"
+      class="cls-4"
+      points="547.35 638.62 1297.67 216.72 1641.24 413.77 906.09 848.3 906.09 1004.93 697.18 730.83"
+    />
+    <polygon
+      (click)="open('Rome')"
+      id="room4"
+      class="cls-5"
+      points="1310.3 204.09 1537.67 77.77 1888.82 282.4 1888.82 522.4 1775.14 577.98 1646.3 507.25 1662.79 417.47 1310.3 204.09"
+    />
+    <polyline
+      (click)="open('Los Angeles')"
+      id="room5"
+      class="cls-6"
+      points="1247.14 658.15 1575.56 471.88 1939.35 676.51 1939.35 906.4 1691.77 1052.93 1504.83 936.72 1375.98 744.72"
+    />
+    <polygon
+      (click)="open('Barcelona')"
+      id="room6"
+      class="cls-7"
+      points="926.3 855.88 1229.46 676.51 1363.35 744.72 1599.56 1075.67 1599.56 1121.14 1285.04 1295.46 911.14 1083.25 926.3 855.88"
+    />
+    <text
+      (click)="open('Rome')"
+      id="text3"
+      class="cls-3"
+      transform="translate(1500.26 285.05) scale(0.58)"
+    >
+      Cafeteria
+    </text>
+    <svg x="1560.74px" y="310px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(1650.74 390) scale(0.58)"
+    >
+      {{ temp4 | number: "2.0-0" }} &deg;C
+    </text>
+    <text
+      (click)="open('Barcelona')"
+      id="text4"
+      class="cls-3"
+      transform="translate(1100.37 991.15) scale(0.58)"
+    >
+      Meeting Room
+    </text>
+    <svg x="1120.74px" y="1032px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(1220.74 1110) scale(0.58)"
+    >
+      {{ temp5 | number: "2.0-0" }} &deg;C
+    </text>
+    <text
+      (click)="open('Los Angeles')"
+      id="text5"
+      class="cls-3"
+      transform="translate(1566.52 787.78) scale(0.58)"
+    >
+      HR's Office
+    </text>
+    <svg x="1520.74px" y="832px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(1620.74 910) scale(0.58)"
+    >
+      {{ temp6 | number: "2.0-0" }} &deg;C
+    </text>
+    <text
+      (click)="open('Lagos')"
+      id="text6"
+      class="cls-3"
+      transform="translate(976.42 575.57) scale(0.58)"
+    >
+      Tech Team
+    </text>
+    <svg x="820.74px" y="600px">
+      <g class="temp">
+        <path
+          d="M60.333,68.349V11.111C60.333,4.984,55.349,0,49.222,0c-6.126,0-11.111,4.984-11.111,11.111v57.237   c-4.15,3.323-6.667,8.397-6.667,13.874c0,9.802,7.975,17.777,17.777,17.777C59.024,100,67,92.024,67,82.223   C67,76.746,64.482,71.672,60.333,68.349z M44.778,48.363h4.444v-4.444h-4.444V35.03h4.444v-4.444h-4.444v-8.889h4.444v-4.444   h-4.444v-6.142c0-2.455,1.99-4.444,4.444-4.444c2.455,0,4.445,1.989,4.445,4.444v41.111h-8.889V48.363z"
+        />
+      </g>
+    </svg>
+    <text
+      (click)="open('London')"
+      id="text1"
+      class="cls-8"
+      transform="translate(920.74 680) scale(0.58)"
+    >
+      {{ temp2 | number: "2.0-0" }} &deg;C
+    </text>
+  </svg>
+</div>

@@ -10,6 +10,58 @@ body {
 }
 
 :root {
+  --temp-hue: 200;
   --temp-alpha: 100%;
-  --temp-rotation: 180deg;
+  --temp-rotation: 90deg;
+}
+$background: #e0e0e0;
+$secondary: salmon;
+@mixin shadow($color, $steps, $glow) {
+  $all: ();
+  $all: append($all, -1px 1px 0 rgba($color, 0.1), comma);
+  $all: append($all, 1px -1px 0 rgba($glow, 0.1), comma);
+  $all: append($all, 1px -1px 25px $glow, comma);
+  @for $i from 1 through $steps {
+    $all: append(
+      $all,
+      append($i * -1px $i * 1.9px $i * 1px, rgba($color, 2 / $i))
+    );
+  }
+  text-shadow: $all;
+}
+
+// Second mixin as I still have to figure out the direction parameters...
+@mixin shadow-alternate($color, $steps, $glow) {
+  $all: ();
+  $all: append($all, -1px -1px 0 rgba($color, 0.1), comma);
+  $all: append($all, 1px 1px 0 rgba($glow, 0.1), comma);
+  $all: append($all, 1px -1px 25px $glow, comma);
+  @for $i from 1 through $steps {
+    $all: append(
+      $all,
+      append($i * -1px $i * -1.9px $i * 1px, rgba($color, 2 / $i))
+    );
+  }
+  text-shadow: $all;
+}
+
+.font,
+.font span {
+  transition: 2s;
+}
+
+.font {
+  font-size: 40px;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 50%, 0) rotate(0deg);
+  color: $background;
+  @include shadow(darken($background, 25%), 25, white);
+  span {
+    color: $secondary;
+    @include shadow(
+      darken(desaturate($secondary, 80%), 20%),
+      25,
+      lighten($secondary, 10%)
+    );
+  }
 }

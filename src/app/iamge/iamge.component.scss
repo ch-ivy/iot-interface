@@ -27,16 +27,22 @@ $switchOff: #ff574e;
 .cls-2 {
   fill: #82c341;
 }
-.cls-3 {
-  font-size: 90px;
-  fill: rgb(9, 30, 43);
+.cls-3,
+.cls-8 {
+  fill: rgb(19, 18, 18);
   font-weight: 800;
   cursor: pointer;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 0 rgb(12, 12, 12), 0 2px 0 #202020, 0 3px 0 rgb(22, 22, 22),
+    0 4px 0 #242323, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.651), 0 20px 20px rgba(0, 0, 0, 0.753);
+}
+.cls-3 {
+  font-size: 90px;
+}
+.cls-8 {
+  font-size: 150px;
 }
 .cls-4 {
   fill: #93a9d7;
@@ -50,7 +56,10 @@ $switchOff: #ff574e;
 .cls-7 {
   fill: #c07fb7;
 }
-
+.temp {
+  opacity: 1 !important;
+  fill: rgb(19, 18, 18);
+}
 .title {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
@@ -134,6 +143,7 @@ $switchOff: #ff574e;
   display: flex;
   flex-wrap: wrap;
   width: 370px;
+  // width: auto;
 }
 
 .appliance {
@@ -165,7 +175,7 @@ $switchOff: #ff574e;
   }
   label {
     position: absolute;
-    width: 74%;
+    width: 90%;
     height: 100%;
     cursor: pointer;
     padding: 20px;
@@ -378,14 +388,6 @@ $switchOff: #ff574e;
   }
 }
 
-.heading .title {
-  margin: 0;
-  font-size: 36px;
-}
-.heading .date {
-  margin: 10px 0;
-  font-size: 16px;
-}
 .icon-w {
   position: relative;
   height: 20px;
@@ -418,17 +420,37 @@ $switchOff: #ff574e;
     border-radius: 50%;
   }
 }
+
+i {
+  color: $blue1;
+  font-size: 40px;
+  top: 5px;
+}
 .forecast {
+  padding: 10px;
   .appliance {
-    padding: 0 27px;
     width: 100%;
   }
+
+  img {
+    margin: -10px;
+  }
+  span {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  strong {
+    margin: 30px 0 10px;
+  }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .forecast {
-    .appliance {
-      padding: 0 50px;
-      width: 100%;
+    label {
+      text-align: center;
     }
+  }
+
+  .display-3 {
+    font-size: 2.4rem !important;
   }
 }

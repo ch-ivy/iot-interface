@@ -1,0 +1,197 @@
+<div class="modal-header" *ngIf="city">
+  <h4 class="modal-title" id="modal-basic-title">{{ officeName }}</h4>
+  <button
+    mat-raised-button
+    class="h5 text-danger"
+    type="button"
+    aria-label="back"
+    routerLink="/"
+  >
+    <span aria-hidden="true"> Go back</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="dashboard">
+    <div class="row">
+      <div class="col-xl-4" style="background: rgba(238, 238, 238, 0.377);">
+        <div class="container">
+          <div class="app m-auto">
+            <div class="dial-container">
+              <svg class="dial" viewBox="0 0 400 400">
+                <defs>
+                  <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#e5e5e5" />
+                    <stop offset="100%" stop-color="#e5e5e5" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <line class="dial__tick" x1="50%" x2="50%" y1="17%" y2="83%" />
+                <line class="dial__tick" x1="17%" x2="83%" y1="50%" y2="50%" />
+                <circle
+                  class="dial__center"
+                  id="dial-center"
+                  cx="50%"
+                  cy="50%"
+                  r="120"
+                />
+                <text
+                  class="dial__temp"
+                  x="50%"
+                  y="30%"
+                  text-anchor="middle"
+                  style="font-size: 28px;
+                    font-weight: 400;"
+                >
+                  <tspan id="temp-display">
+                    Temp
+                  </tspan>
+                </text>
+                <text class="dial__temp" x="50%" y="50%" text-anchor="middle">
+                  <tspan id="temp-display">
+                    {{ currentTemp | number: "2.0-0" }}
+                  </tspan>
+                  <tspan class="dial__temp-units">&deg;C</tspan>
+                </text>
+                <g class="dial__control">
+                  <circle
+                    class="dial__track"
+                    cx="50%"
+                    cy="50%"
+                    r="152"
+                    stroke="url(#linear)"
+                  />
+                  <circle
+                    id="temp-handle"
+                    class="dial__dot"
+                    cx="48"
+                    cy="50%"
+                    r="10"
+                    stroke="transparent"
+                    stroke-width="20"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="ap">
+            <h3
+              class="mx-2 my-1"
+              style="font-weight: 400; font-size: 18px; font-family: 'Quicksand', sans-serif;"
+            >
+              <i
+                [ngClass]="weathericon"
+                style="font-weight: 300; font-size: 20px;
+                  color: #ff574e;"
+              ></i>
+              {{ details | titlecase }}
+            </h3>
+            <h3
+              class="mx-2 my-1"
+              style="font-weight: 500; font-size: 20px; font-family: 'Quicksand', sans-serif;"
+            >
+              {{ date | date: "EEEE, h:mm a" }}
+            </h3>
+
+            <hr />
+            <div class="row my-3" style="padding: 10px;">
+              <div class="appliance col-md-6">
+                <input type="checkbox" name="a" id="a" />
+                <label for="a">
+                  <i class="l"></i>
+                  <strong>Light</strong>
+                  <span data-o="opened" data-c="closed"></span>
+                  <small></small>
+                </label>
+              </div>
+
+              <div class="appliance col-md-6">
+                <input type="checkbox" name="a" id="b" />
+                <label for="b">
+                  <i class="r"></i>
+                  <strong>Router</strong>
+                  <span data-o="opened" data-c="closed"></span>
+                  <small></small>
+                </label>
+              </div>
+
+              <div class="appliance col-md-6">
+                <input type="checkbox" name="a" id="c" />
+                <label for="c">
+                  <i class="a"></i>
+                  <strong>A/c</strong>
+                  <span data-o="opened" data-c="closed"></span>
+                  <small></small>
+                </label>
+              </div>
+
+              <div class="appliance col-md-6">
+                <input type="checkbox" name="a" id="d" />
+                <label for="d">
+                  <i class="f"></i>
+                  <strong>Fridge</strong>
+                  <span data-o="opened" data-c="closed"></span>
+                  <small></small>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-8"
+        style="background-image: linear-gradient(to right, rgba(58, 43, 15, 0.103) 0%, #ffae195d 100%);"
+      >
+        <h2 class="my-5 mx-4 title">Forcast Details</h2>
+        <div class="row forecast">
+          <div class="appliance col-lg-3">
+            <label>
+              <img
+                *ngIf="icon"
+                src="https://openweathermap.org/img/wn/{{ icon }}@2x.png"
+                alt=""
+              />
+              <span>{{ currentWeather }}</span>
+              <strong>Weather</strong>
+            </label>
+          </div>
+          <div class="appliance col-lg-3">
+            <label>
+              <h4><i class="wi wi-humidity mx-2"></i> {{ Humidity }}%</h4>
+              <strong>Humidity</strong>
+            </label>
+          </div>
+          <div class="appliance col-lg-3">
+            <label>
+              <h4><i class="wi wi-strong-wind m-2"></i> {{ Wind }}Km</h4>
+              <strong>Wind</strong>
+            </label>
+          </div>
+          <div class="appliance col-lg-3">
+            <label>
+              <h4><i class="wi wi-barometer m-2"></i> {{ pressure }}mb</h4>
+              <strong>Pressure</strong>
+            </label>
+          </div>
+        </div>
+
+        <div
+          *ngIf="lineChartData.length > 0"
+          class="chart-wrapper bg-white shadow-sm my-4 mx-3 p-3 rounded"
+        >
+          <canvas
+            baseChart
+            width="400"
+            height="200"
+            [datasets]="lineChartData"
+            [labels]="ChartLabels"
+            [options]="Options"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
