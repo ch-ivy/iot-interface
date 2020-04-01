@@ -76,13 +76,10 @@ export class ModalComponent implements OnInit, OnDestroy {
   async info(data) {
     this.city = data;
     this.currentTemp = data['list'][0].main.temp - 273.5;
+    this.hue = this.currentTemp < 25 ? 200 : 5;
 
-    this.percentageOfFullRange = ((360 + (this.currentTemp - 90)) % 360) / 360;
-    this.hue = this.percentageOfFullRange < 0.5 ? 200 : 5;
-    this.alpha = 40 + 2 * 45 * Math.abs(this.percentageOfFullRange - 0.5);
     document.documentElement.style.setProperty("--temp-rotation", `${this.currentTemp}deg`);
     document.documentElement.style.setProperty("--temp-hue", `${this.hue}`);
-    document.documentElement.style.setProperty("--temp-alpha", `${this.alpha}%`);
 
     this.currentWeather = data['list'][0].weather[0].main;
     this.details = data['list'][0].weather[0].description;
