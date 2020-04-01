@@ -100,7 +100,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.Wind = data['list'][0].wind.speed;
     this.pressure = data['list'][0].main.pressure;
     this.Humidity = data['list'][0].main.humidity;
-    this.ChartLabels = data['list'].filter(word => data['list'].indexOf(word) % 5 === 0).map((datum) => { return this.datePipe.transform(datum.dt_txt, 'H:mm, EEE') });
-    this.lineChartData = data['list'].filter(word => data['list'].indexOf(word) % 5 === 0).map(datum => ({ data: datum.main.temp - 273.5, label: 'Temperature over the week' }));
+    this.ChartLabels = data['list'].filter(word => data['list'].indexOf(word) % 8 === 0).map((datum) => { return this.datePipe.transform((datum.dt_txt).replace(/-/g, "/"), 'EEE') });
+    this.lineChartData = data['list'].filter(word => data['list'].indexOf(word) % 8 === 0).map(datum => ({ data: datum.main.temp - 273.5, label: 'Temperature over the week' }));
   }
 }
