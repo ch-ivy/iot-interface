@@ -1,21 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: "Quicksand", sans-serif !important;
-}
-
 :root {
   --temp-hue: 200;
   --temp-alpha: 100%;
   --temp-rotation: 90deg;
 }
 $background: #e0e0e0;
-$secondary: salmon;
+$secondary: #ffae19;
 @mixin shadow($color, $steps, $glow) {
   $all: ();
   $all: append($all, -1px 1px 0 rgba($color, 0.1), comma);
@@ -43,6 +33,15 @@ $secondary: salmon;
     );
   }
   text-shadow: $all;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif !important;
 }
 
 .font,

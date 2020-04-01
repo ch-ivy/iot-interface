@@ -2,12 +2,12 @@
   <h4 class="modal-title" id="modal-basic-title">{{ officeName }}</h4>
   <button
     mat-raised-button
-    class="h5 text-danger"
+    class="h5 closed"
     type="button"
     aria-label="back"
     routerLink="/"
   >
-    <span aria-hidden="true"> Go back</span>
+    <span aria-hidden="true"> Exit</span>
   </button>
 </div>
 <div class="modal-body">
@@ -41,12 +41,12 @@
                   style="font-size: 28px;
                     font-weight: 400;"
                 >
-                  <tspan id="temp-display">
+                  <tspan class="temp-display">
                     Temp
                   </tspan>
                 </text>
                 <text class="dial__temp" x="50%" y="55%" text-anchor="middle">
-                  <tspan id="temp-display">
+                  <tspan class="temp-display">
                     {{ currentTemp | number: "2.0-0" }}
                   </tspan>
                   <tspan class="dial__temp-units">&deg;C</tspan>
