@@ -1,6 +1,6 @@
 # Iot
 
-This project works with weather API and broadcasts weather details on a slick dashboard [here](iot-interface.netlify.app)
+This project works with weather API and broadcasts weather details on a slick dashboard [here](https://iot-interface.netlify.app)
 
 ## Further help
 
